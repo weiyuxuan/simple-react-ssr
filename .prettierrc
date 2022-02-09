@@ -1,0 +1,32 @@
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "consistent",
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "parser": "babel",
+  "overrides": [
+    {
+      "files": "*.tsx?",
+      "options": { "parser": "babel-ts" }
+    },
+    {
+      "files": "*.jsx?",
+      "options": { "parser": "babel" }
+    },
+    {
+      "files": "*.json",
+      "options": { "parser": "json" }
+    },
+    {
+      "files": "*.md",
+      "options": { "parser": "markdown" }
+    }
+  ]
+}
