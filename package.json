@@ -9,8 +9,14 @@
   "author": "weiyuxuan",
   "license": "Apache-2.0",
   "scripts": {
+    "dev:client": "cross-env webpack --config scripts/webpack.client.js -w",
+    "dev:server": "cross-env webpack --config scripts/webpack.server.js -w",
+    "dev": "cross-env webpack --config scripts/webpack.config.js -w",
+    "build:client": "cross-env webpack --config scripts/webpack.client.js",
+    "build:server": "cross-env webpack --config scripts/webpack.server.js",
     "build": "cross-env webpack --config scripts/webpack.config.js",
-    "serve": "node ./dist/server.js"
+    "serve": "node ./dist/server.js",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
   "bugs": {
     "url": "https://github.com/weiyuxuan/simple-react-ssr/issues"
@@ -22,13 +28,16 @@
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
+    "prettier": "^2.5.1",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "express": "^4.17.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0"
   }
 }
