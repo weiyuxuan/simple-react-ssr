@@ -9,11 +9,7 @@
   "author": "weiyuxuan",
   "license": "Apache-2.0",
   "scripts": {
-    "dev:client": "cross-env webpack --config scripts/webpack.client.js -w",
-    "dev:server": "cross-env webpack --config scripts/webpack.server.js -w",
     "dev": "cross-env webpack --config scripts/webpack.config.js -w",
-    "build:client": "cross-env webpack --config scripts/webpack.client.js",
-    "build:server": "cross-env webpack --config scripts/webpack.server.js",
     "build": "cross-env webpack --config scripts/webpack.config.js",
     "serve": "node ./dist/server.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
