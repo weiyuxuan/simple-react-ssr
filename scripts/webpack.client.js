@@ -35,8 +35,9 @@ const client = {
             options: {
               modules: {
                 auto: true,
-                mode: 'local',
+                localIdentHashSalt: 'ssr',
                 localIdentName: '[hash:8]-[local]',
+                exportOnlyLocals: true,
               },
             },
           },

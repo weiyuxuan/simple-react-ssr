@@ -28,7 +28,7 @@ const Licenses = ({ fetchInitialData, staticContext }) => {
   return (
     <div>
       <Nav />
-      <h1>Licenses Page</h1>
+      <h1>Licenses List</h1>
       <ul>
         {licenses?.map((license) => (
           <li key={license.key}>

@@ -5,7 +5,11 @@ const Home = () => {
   return (
     <div>
       <Nav />
-      <h1>Home Page</h1>
+      <h1>Home</h1>
+      <p>
+        A simple React SSR demo with github open api to view the open-source
+        license list and details.
+      </p>
     </div>
   )
 }

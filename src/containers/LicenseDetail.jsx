@@ -26,7 +26,7 @@ const LicenseDetail = ({ fetchInitialData, staticContext }) => {
   return (
     <div>
       <Nav />
-      <h1>{`License Detail Page - ${id?.toUpperCase()}`}</h1>
+      <h1>{id?.toUpperCase()}</h1>
       <div>
         {license?.body?.split('\n').map((text) => (
           <span key={text}>
