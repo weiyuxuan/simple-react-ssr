@@ -1,7 +1,9 @@
-const paths = require('./paths')
-const config = require('../configs/local.json')
 const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+const paths = require('./paths')
+const config = require('../configs/local.json')
 
 const server = {
   mode: 'production',
@@ -27,6 +29,23 @@ const server = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                mode: 'local',
+                localIdentName: '[hash:8]-[local]',
+                exportOnlyLocals: true,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
 
@@ -39,6 +58,9 @@ const server = {
     new webpack.DefinePlugin({
       __IS_BROWSER__: 'false',
       __GITHUB_TOKEN__: JSON.stringify(config.GITHUB_TOKEN),
+    }),
+    new MiniCssExtractPlugin({
+      filename: './public/main.css',
     }),
   ],
 }

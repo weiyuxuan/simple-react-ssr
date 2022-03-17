@@ -1,11 +1,12 @@
+const webpack = require('webpack')
+
 const paths = require('./paths')
 const config = require('../configs/local.json')
-const webpack = require('webpack')
 
 const client = {
   mode: 'production',
 
-  entry: `${paths.src}/client`,
+  entry: paths.client,
 
   output: {
     path: `${paths.dist}/public`,
@@ -25,6 +26,21 @@ const client = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                mode: 'local',
+                localIdentName: '[hash:8]-[local]',
+              },
+            },
+          },
+        ],
       },
     ],
   },

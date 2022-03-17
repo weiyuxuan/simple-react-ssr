@@ -1,14 +1,12 @@
 # Simple React SSR Demo
 
-A simple React SSR demo with github open api.
-
-View the open source license list and details.
+A simple React SSR demo with github open api to view the open-source license list and details.
 
 ## Features
 
 - [x] Router
 - [x] Data fetching
-- [ ] Styles
+- [x] Styles
 
 ## Usage
 

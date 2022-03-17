@@ -3,8 +3,8 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { matchPath, StaticRouter } from 'react-router-dom'
 
-import App from '../src/App'
-import routes from '../src/routes'
+import App from '../../src/App'
+import routes from '../../src/routes'
 import template from './template'
 
 const app = express()
