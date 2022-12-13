@@ -1,25 +1,22 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import routes from './routes'
 import './app.css'
 
 const App = () => (
-  <Switch>
+  <Routes>
     {routes.map((route) => {
-      const { path, component: C, exact, fetchInitialData } = route
+      const { path, component: C, fetchInitialData } = route
       return (
         <Route
           key={path}
           path={path}
-          exact={exact}
-          render={(props) => (
-            <C fetchInitialData={fetchInitialData} {...props} />
-          )}
+          element={<C fetchInitialData={fetchInitialData} />}
         />
       )
     })}
-  </Switch>
+  </Routes>
 )
 
 export default App

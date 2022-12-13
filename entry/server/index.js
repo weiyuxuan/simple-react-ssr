@@ -1,7 +1,8 @@
 import express from 'express'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import { matchPath, StaticRouter } from 'react-router-dom'
+import { matchPath } from 'react-router-dom'
+import { StaticRouter } from 'react-router-dom/server'
 
 import App from '../../src/App'
 import routes from '../../src/routes'
@@ -12,7 +13,7 @@ const app = express()
 app.use(express.static('dist/public'))
 
 app.get('*', (req, res) => {
-  const activeRoute = routes.find((route) => matchPath(req.url, route)) || {}
+  const activeRoute = routes.find((route) => matchPath(route, req.url)) || {}
 
   const promise = activeRoute.fetchInitialData
     ? activeRoute.fetchInitialData(req.url)
