@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const WebpackBar = require('webpackbar')
 const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -54,6 +55,7 @@ const server = {
   externals: [nodeExternals()],
 
   plugins: [
+    new WebpackBar(),
     new webpack.DefinePlugin({
       __IS_BROWSER__: 'false',
       __GITHUB_TOKEN__: JSON.stringify(config.GITHUB_TOKEN),

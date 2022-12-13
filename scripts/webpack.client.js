@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const WebpackBar = require('webpackbar')
 
 const paths = require('./paths')
 const config = require('../configs/local.json')
@@ -47,6 +48,7 @@ const client = {
   },
 
   plugins: [
+    new WebpackBar(),
     new webpack.DefinePlugin({
       __IS_BROWSER__: 'true',
       __GITHUB_TOKEN__: JSON.stringify(config.GITHUB_TOKEN),

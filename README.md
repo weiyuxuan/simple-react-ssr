@@ -28,6 +28,8 @@ and
 npm run serve
 ```
 
+Then open `http://localhost:3000` in your browser.
+
 ### Build
 
 Run the following commands:
