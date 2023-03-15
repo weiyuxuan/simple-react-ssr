@@ -22,7 +22,7 @@ const Licenses = ({ fetchInitialData, staticContext }) => {
         fetchedData.current = true
       })
     }
-  }, [fetchedData])
+  }, [fetchedData.current])
 
   return (
     <div>

@@ -34,7 +34,7 @@
     "webpackbar": "^5.0.2"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -21,7 +21,7 @@ const LicenseDetail = ({ fetchInitialData, staticContext }) => {
         fetchedData.current = true
       })
     }
-  }, [id, fetchedData])
+  }, [id, fetchedData.current])
 
   return (
     <div>
