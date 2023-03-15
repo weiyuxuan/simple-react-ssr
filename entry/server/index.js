@@ -3,6 +3,8 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { matchPath } from 'react-router-dom'
 import { StaticRouter } from 'react-router-dom/server'
+import favicon from 'serve-favicon'
+import path from 'path'
 
 import App from '../../src/App'
 import routes from '../../src/routes'
@@ -11,6 +13,8 @@ import template from './template'
 const app = express()
 
 app.use(express.static('dist/public'))
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('*', (req, res) => {
   const activeRoute = routes.find((route) => matchPath(route, req.url)) || {}

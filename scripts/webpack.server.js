@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const WebpackBar = require('webpackbar')
 const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const paths = require('./paths')
 const config = require('../configs/local.json')
@@ -62,6 +63,14 @@ const server = {
     }),
     new MiniCssExtractPlugin({
       filename: './public/main.css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: `${paths.server}/public/favicon.ico`,
+          to: `${paths.dist}/public/favicon.ico`,
+        },
+      ],
     }),
   ],
 }
