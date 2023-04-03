@@ -30,6 +30,8 @@ npm run serve
 
 Then open `http://localhost:3000` in your browser.
 
+To see the changes in `src` folder, you need to refresh the browser.
+
 ### Build
 
 Run the following commands:

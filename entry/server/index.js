@@ -17,7 +17,11 @@ app.use(express.static('dist/public'))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.get('*', (req, res) => {
-  const activeRoute = routes.find((route) => matchPath(route, req.url)) || {}
+  const activeRoute = routes.find((route) => matchPath(route, req.url))
+
+  if (!activeRoute) {
+    return res.status(404).send('404 Not found')
+  }
 
   const promise = activeRoute.fetchInitialData
     ? activeRoute.fetchInitialData(req.url)
