@@ -12,12 +12,12 @@ const App = ({ initialData }) => (
         <Route
           key={path}
           path={path}
-          element={(
+          element={
             <Page
               initialData={initialData}
               fetchInitialData={fetchInitialData}
             />
-          )}
+          }
         />
       )
     })}
