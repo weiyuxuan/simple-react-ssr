@@ -31,8 +31,8 @@ app.get('*', (req, res) => {
     .then((resp) => {
       const data = { [req.url]: resp?.data || null }
       const body = renderToString(
-        <StaticRouter location={req.url} context={{ data }}>
-          <App />
+        <StaticRouter location={req.url}>
+          <App initialData={data} />
         </StaticRouter>,
       )
       const html = template(body, data)
